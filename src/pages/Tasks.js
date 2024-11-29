@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet';
 import { TaskEditor } from '../components/TaskEditor/TaskEditor';
+import { TaskList } from '../components/TaskList/TaskList';
 
 export default function Tasks() {
   return (
@@ -9,6 +10,7 @@ export default function Tasks() {
       </Helmet>
       <TaskEditor />
       <div></div>
+      <TaskList />
     </>
   );
 }
