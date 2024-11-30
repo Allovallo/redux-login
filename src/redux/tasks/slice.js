@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchTasks, addTask, deleteTask } from './operations';
-import { logOut } from '../auth/selectors';
+import { logOut } from '../auth/operations';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -37,7 +37,7 @@ const taskSlice = createSlice({
       })
       .addCase(addTask.rejected, handleRejected)
       .addCase(deleteTask.pending, handlePending)
-      .addCase(addTask.fulfilled, (state, action) => {
+      .addCase(deleteTask.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         const index = state.items.findIndex(
